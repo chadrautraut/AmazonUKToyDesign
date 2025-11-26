@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Children's Toy Listing</title>
+<style>
+    /* Basic reset */
+    body, h1, h2, h3, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #ffffff;
+        color: #333333;
+        line-height: 1.5;
+    }
+
+    .toy-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border: 2px solid #ffd54f;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .toy-header {
+        background: linear-gradient(90deg, #ffca28, #ffecb3);
+        padding: 16px;
+        text-align: center;
+        border-bottom: 2px solid #ffb300;
+    }
+
+    .toy-header h1 {
+        font-size: 26px;
+        font-weight: bold;
+        color: #444444;
+    }
+
+    .toy-header p {
+        font-size: 14px;
+        color: #555555;
+        margin-top: 6px;
+    }
+
+    .toy-main {
+        padding: 16px;
+    }
+
+    .toy-top-section {
+        display: table;
+        width: 100%;
+        border-spacing: 0;
+    }
+
+    .toy-images,
+    .toy-summary {
+        display: table-cell;
+        vertical-align: top;
+        padding: 8px;
+    }
+
+    .toy-images {
+        width: 45%;
+        text-align: center;
+        border-right: 1px solid #eeeeee;
+    }
+
+    .toy-images img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        border: 1px solid #eeeeee;
+    }
+
+    .toy-thumbnail-row {
+        margin-top: 8px;
+    }
+
+    .toy-thumbnail-row img {
+        max-width: 30%;
+        margin: 0 4px;
+        border-radius: 4px;
+        border: 1px solid #dddddd;
+    }
+
+    .toy-summary {
+        width: 55%;
+    }
+
+    .toy-price {
+        font-size: 24px;
+        color: #e53935;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    .toy-subtext {
+        font-size: 13px;
+        color: #777777;
+        margin-bottom: 12px;
+    }
+
+    .toy-highlight-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .toy-highlight-list li {
+        margin-bottom: 6px;
+        padding-left: 20px;
+        background: url('https://i.imgur.com/3tIYt3O.png') no-repeat left center;
+        /* If you prefer no external icon, remove the line above and the background will disappear */
+    }
+
+    .toy-badges {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .toy-badge {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 3px 3px 0 0;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .toy-badge.green {
+        background-color: #c8e6c9;
+        color: #256029;
+    }
+
+    .toy-badge.blue {
+        background-color: #bbdefb;
+        color: #0d47a1;
+    }
+
+    .toy-badge.pink {
+        background-color: #f8bbd0;
+        color: #880e4f;
+    }
+
+    .toy-section {
+        margin-top: 18px;
+        padding-top: 12px;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .toy-section h2 {
+        font-size: 18px;
+        color: #444444;
+        margin-bottom: 8px;
+        border-left: 5px solid #ffca28;
+        padding-left: 8px;
+    }
+
+    .toy-section p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .toy-section ul {
+        margin-left: 20px;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .toy-section ul li {
+        margin-bottom: 4px;
+    }
+
+    .toy-specs-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin-top: 4px;
+    }
+
+    .toy-specs-table th,
+    .toy-specs-table td {
+        padding: 6px 8px;
+        border: 1px solid #eeeeee;
+    }
+
+    .toy-specs-table th {
+        width: 30%;
+        background-color: #fff8e1;
+        text-align: left;
+    }
+
+    .toy-footer {
+        background-color: #fafafa;
+        border-top: 2px solid #ffeb3b;
+        padding: 12px 16px;
+        font-size: 12px;
+        text-align: center;
+        color: #777777;
+    }
+
+    /* Simple mobile responsiveness for eBay app and small screens */
+    @media only screen and (max-width: 640px) {
+        .toy-top-section {
+            display: block;
+        }
+        .toy-images,
+        .toy-summary {
+            display: block;
+            width: 100%;
+            border-right: none;
+        }
+        .toy-wrapper {
+            border: none;
+            border-radius: 0;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="toy-wrapper">
+
+    <!-- HEADER -->
+    <div class="toy-header">
+        <h1><!-- TOY TITLE -->Colourful Building Blocks Set for Kids</h1>
+        <p>Fun, educational toy perfect for little builders – ideal gift for birthdays, Christmas and more.</p>
+    </div>
+
+    <div class="toy-main">
+        <!-- TOP: IMAGES + SUMMARY -->
+        <div class="toy-top-section">
+
+            <!-- MAIN IMAGE + THUMBNAILS -->
+            <div class="toy-images">
+                <!-- MAIN IMAGE URL -->
+                <img src="toy1.jpg" alt="Children's Toy - Main Image">
+                <div class="toy-thumbnail-row">
+                    <img src="toy1_side.jpg" alt="Side view">
+                    <img src="toy1_inuse.jpg" alt="In use">
+                    <img src="toy1_package.jpg" alt="Packaging">
+                </div>
+            </div>
+
+            <!-- SUMMARY / KEY INFO -->
+            <div class="toy-summary">
+                <div class="toy-price">£<!-- PRICE -->19.99</div>
+                <div class="toy-subtext">
+                    <!-- SHORT SUBTEXT -->
+                    Free UK mainland postage • Fast dispatch from UK seller
+                </div>
+
+                <ul class="toy-highlight-list">
+                    <li>Suitable for ages <!-- AGE RANGE -->3 years+</li>
+                    <li><!-- FEATURE 1 -->Includes 60 colourful, chunky blocks</li>
+                    <li><!-- FEATURE 2 -->Encourages creativity, fine motor skills and problem-solving</li>
+                    <li><!-- FEATURE 3 -->Non-toxic, child-safe materials (EN71 tested)</li>
+                    <li><!-- FEATURE 4 -->Perfect gift for birthdays, Christmas and special occasions</li>
+                </ul>
+
+                <div class="toy-badges">
+                    <span class="toy-badge green">UK Seller</span>
+                    <span class="toy-badge blue">Fast Dispatch</span>
+                    <span class="toy-badge pink">Great Gift Idea</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: DESCRIPTION -->
+        <div class="toy-section">
+            <h2>Product Description</h2>
+            <p>
+                Introduce your little one to a world of colorful creativity with My First Block Buddies! 
+                Designed for tiny hands and big imaginations, this engaging building block set encourages essential 
+                developmental skills through playful construction. Children will delight in snapping together the vibrant, 
+                oversized blocks to create their own unique characters, animals, and structures. The friendly "Block Buddy" 
+                character on the box provides endless inspiration, while the easy-to-handle pieces promote fine motor skills, 
+                problem-solving, and imaginative play. Made from durable, child-safe materials,
+            </p>
+            <p>
+                My First Block Buddies offers hours of open-ended fun, fostering early learning and endless smiles. 
+                It’s the perfect first building set to spark curiosity and joy in every budding builder!
+            </p>
+        </div>
+
+        <!-- SECTION: WHAT'S INCLUDED -->
+        <div class="toy-section">
+            <h2>What’s Included</h2>
+            <ul>
+                <li><!-- QTY -->25 Colorful, easy-to-grasp building blocks (Red, Blue, Yellow, Green)</li>
+                <li>4 Specialty character blocks (featuring printed eyes and unique shapes)</li>
+                <li>1 Step-by-step instructional building guide</li>
+                <li>1 Durable storage box with carry handle</li>
+            </ul>
+        </div>
+
+        <!-- SECTION: SPECIFICATIONS -->
+        <div class="toy-section">
+            <h2>Key Features &amp; Specifications</h2>
+            <table class="toy-specs-table">
+                <tr>
+                    <th>Recommended Age</th>
+                    <td><!-- AGE RANGE -->3 years+</td>
+                </tr>
+                <tr>
+                    <th>Material</th>
+                    <td><!-- MATERIAL -->BPA-free plastic, non-toxic paint</td>
+                </tr>
+                <tr>
+                    <th>Pieces</th>
+                    <td><!-- NUMBER OF PIECES -->25 blocks</td>
+                </tr>
+                <tr>
+                    <th>Box Dimensions</th>
+                    <td><!-- DIMENSIONS -->Approx. 25 cm × 20 cm × 15 cm</td>
+                </tr>
+                <tr>
+                    <th>Safety Standard</th>
+                    <td><!-- SAFETY -->Tested to EU/UK EN71 toy safety standards</td>
+                </tr>
+                <tr>
+                    <th>Brand</th>
+                    <td><!-- BRAND -->[Your Brand Name]</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- SECTION: SAFETY INFO -->
+        <div class="toy-section">
+            <h2>Safety Information</h2>
+            <ul>
+                <li>Not suitable for children under 36 months.</li>
+                <li>Small parts – choking hazard. Use under adult supervision.</li>
+                <li>Inspect regularly and replace if any parts become damaged.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION: DELIVERY & RETURNS -->
+        <div class="toy-section">
+            <h2>Delivery &amp; Returns (UK)</h2>
+            <ul>
+                <li><strong>Dispatch Time:</strong> Orders are usually dispatched within <strong>1 working day</strong>.</li>
+                <li><strong>Postage:</strong> Free Royal Mail or courier service to UK mainland (upgrade options may be available at checkout).</li>
+                <li><strong>Packaging:</strong> We pack items carefully to ensure they arrive in perfect condition.</li>
+                <li><strong>Returns:</strong> 30-day returns accepted. Item must be unused and in original packaging.</li>
+            </ul>
+            <p>
+                If you have any questions at all, please send us a message via eBay and we’ll be happy to help.
+            </p>
+        </div>
+
+        <!-- SECTION: ABOUT THE SELLER -->
+        <div class="toy-section">
+            <h2>About Us</h2>
+            <p>
+                We are a UK-based family business specialising in quality children’s toys and gifts.
+                We carefully select our products to offer great value, learning benefits and, most importantly, lots of fun.
+            </p>
+            <p>
+                Please check out our other listings for more toys, games and gift ideas – and don’t forget to add us to your favourites!
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="toy-footer">
+        Colours and details may vary slightly from the images shown. All trademarks are the property of their respective owners.
+        <br>
+        Thank you for shopping with us!
+    </div>
+</div>
+</body>
+</html>
